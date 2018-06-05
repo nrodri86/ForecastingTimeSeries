@@ -1,0 +1,132 @@
+\documentclass{article}
+% Uncomment the following line to allow the usage of graphics (.png, .jpg)
+\usepackage[pdftex]{graphicx}
+% Allow the usage of utf8 characters
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=cyan,
+	 citecolor=blue,
+}
+
+\usepackage{amsmath}
+
+\title{Capstone Project Proposal: Estimating Cryptocurrency Future Price Using Machine Learning in the Latin American Markets.}
+\author{Nicolas Rodriguez Celys}
+% Start the document
+\begin{document}
+
+\maketitle
+
+
+\section{Domain Background}\label{domain}
+
+The interest in blockchain has received much attention in several domains since its introduction by \cite{ARTICLE:1}. Blockchain is supported by the join of technologies of peer to peer, symmetric cryptography and cryptohgraphic hashing where the information of transactions (Ledgers) is distributed among computers without the intervention of a central authority. A cryptocurrency is a digital currency exchanged on the distributed ledger of blockchain; bitcoin was the first to be implemented in 2009. In the financial sector, individuals see an oportunity for personal investment in the growing economy of cryptocurrencies. The price of bitcoin has climbed to 5000\%(\cite{ARTICLE:2}) since 2009. There is a divided opinion on the academic field about the benefits or the drawbacks of cryptocurrencies. \cite{ARTICLE:3}  argues that bitcoin exhibits a high volatility compare to stable assets such as gold or some set of fia money. \cite{ARTICLE:3} presents  the existence of bubbles in the bitcoin market. Yet, \cite{ARTICLE:4} argues bitcoin can be used for diversification while \cite{ARTICLE:5}  shows that the criptocurrency has hedge capabilities such as gold and dollar. \cite{ARTICLE:2} concludes that bitcoin, in general, is an inefficient on the perspective of efficient market hypothesis (EMH) \cite{ARTICLE:6} however, it might has a tendency to be efficient on the weak form, meaning that investors cannot use past information to predict future returns.
+
+In areas such as machine learning (ML), artificial inteligence, data mining, big data or business inteligence, the use of computer science has emerged in the last two decades as a prediction tool for the financial sector(\cite{ARTICLE:7}). \cite{ARTICLE:8} uses Support Vector Machine (SVC) for Forex Time series prediction. Moreover, clustering is also used to price prediction for the Forex market (\cite{ARTICLE:10}, \cite{ARTICLE:11}). Due to its novelty, in the cryptocurrencies market, there are few studies on the application of ML for price prediction. \cite{ARTICLE:12} uses a SVC  to forecast the volatility of cryptocurrencies while \cite{ARTICLE:16} uses SVN to measure the sentiment analysis on twiter and its correlation with the price of bitcoin. Finally \cite{ARTICLE:17} uses NARX model combined with neuronal networks to forecast bitcoin price.
+
+Despite the volatility of the cryptocurrencies, they are becoming alternative for investing in the Emerging Markets specially in goverments where the fiscal and monetary policy  is irresponsible. Latin America is characterise for its high inflation. Argentina is still struggling to control the inflation created but by the Kitchner government and Venezuela is suffering an hyperinflation due to its socialist totalitarian regime. For this reason, I am personally encourage to research more about cryptocurrencies as alternative for investment.
+
+\section{Problem Statement} \label{problem}
+
+The problem to be solved is to forecast the daily closing price of bitcoin (BTC) and  ethereum (ETH) for suramerican fia currencies Colombian Peso (COP), Brazilian Real (BRL), Chilean Peso (CHL) and peruvian soles (SOL) accesing historical data from local exchange markets. The problem it is a time series price forecasting where the inputs for the ML model are a set of historic time series of different dimensions.
+
+
+\section{Datasets and Inputs} \label{datasets}
+
+The price information is going to be collected from the local exchanges \href{https://api.buda.com}{buda} and \href{https://www.mercadobitcoin.com.br/api-doc/}{mercadobitcoin}. Buda opened business in 2014 in Chile and  they have gradually expanded to Colombia and Peru. Therefore, for each of the currency pair BTC-COP, BTC-CHL, BTC-SOL, ETH-COP, ETH-CHL and ETH-SOL hosted in buda, there will be a daily time series dataset of 3 years. Futhermore, Mercadobitcoin opened in 2011 in Brazil being the first exchange in Latin America for the pair BTC-BRL; hence, it is expected a timse series dataset of 6 years. Each time series will contain the following fields:
+
+\begin{description}
+\item[Date] Day with the information.
+\item[Closing Price] The price at the end of the day.
+\item[Opening Price] The price at the beginning of the day.
+\item[High Price] The maximum price during the day.
+\item[Low Price] The minimum price during the day.
+\item[Total circulation of bitcoin] Total daily number of bitcoin in circulation.
+\end{description}
+
+
+In addition, I will  extract the pair BTC-USD from the site \url{www.bitcoincharts.com}. It provides a complete history of various Bitcoin exchanges. The pair BTC-USD will be usefull to see if there is an arbitrage strategy or to find out the correlation between the different prices.
+
+There are other technical time series that can be extracted from the data represented here. Moving Averages, Bollinger bands and pivots are timeseries information that is being used  for professional traders among the world \cite{ARTICLE:15}.
+
+
+\section{Solution Statement} \label{sol}
+
+
+The solution consist of a nonlinear autoregressive exogenous model (NARX). Using a ML, we are going to find a function $ H $ such $ P_t = H ( \tau , \theta , \omega ) $ where:
+\begin{description}
+
+\item[$ P_t $] The price estimate for the date $ t $.
+\item[$ \tau $] Represent the dimension of the factual information of the price. this information includes information of previous days  such as: closing price, opening price, min price, max price and volume.
+\item[$ \theta $] Represent the dimension of the complementary technical  information of the price. This information includes information of previous days  such as: Moving averages, Moving Standard Deviations, Bolinger Bands etc.
+\item[$ \omega $] Represent the market information that may enrich the analysis, for instance, the representative rate against USD.
+
+\end{description}
+
+To find the $ H $, It is going to be used the  set of ML algorithms use it for regression provided by the softwares Skelearn \cite{scikit-learn} and Tensorflow\cite{tensorflow2015-whitepaper}:
+
+\begin{description}
+
+\item[Generalized Linear Models:] Ordinary Least Squares, Ridge Regression, Lasso and Logistic Regression.
+\item[Support Vector:] SVR and Kernel Ridge Regression.
+\item[Decision Trees:] Decision Tree Regression.
+\item[Ensemble Methods:] Gradient Boosted Regression Trees and Extreme Gradient Boosting.
+\item[Deep Learning:] Multilayer Perceptron, Long Short-Term Memory.
+
+\end{description}
+
+
+\section{Benchmark Model} \label{benchmark}
+
+The problem is a time series forecast. As benchmark we are going to use the autoregressive integrated moving average (ARIMA) Model and the model proposed  in \cite{ARTICLE:17}.  ARIMA model combines the dependency between the current observation and a number of lagged observations (AR), the dependency with the trending and the seasonality of the time series (I) and the dependency between the moving average applied to lagged obervations (MA). \cite{ARTICLE:17} uses a NARX model to forecast the bitcoin price with NN.
+
+
+\section{Evaluation Metrics} \label{evaluation}
+
+As a regression metric valuation we are going to use the  \textbf{coefficient of multiple determination $ R^2 $} and the \textbf{ adjusted $ R^2 $} or $ R^2_a $. The  $ R^2 $ is defined as:
+
+\begin{equation}
+R^2=1-\frac{SSE}{SST}
+\end{equation}
+
+where $ SSE $ is the residual sum of squares and $ SST $ is s measure of total variation of the target values. For $ R^2_a $ is:
+
+\begin{equation}
+R^2_a=1-\frac{n-1}{n-(k+1)}. \frac{SSE}{SST}
+\end{equation}
+
+
+where $ n $ is the number of observations and $ k $ the number of features use to predict the target variable.
+
+\section{Project Design} \label{project}
+
+
+This is the proposed workflow for the project based on \textbf{ Cross-industry standard process for data mining} (CRISP-DM):
+\begin{enumerate}
+\item \textbf{Data Retrieval}: Extract the data from the public APIs of the exchange and organize them in csv files for future use in pandas. This data will be known as the raw data.
+
+\item \textbf{Data Preparation}: Prepare the data for the ML models. In addition of the raw data, some additional features are going to be added to the data. Some of the features are technical trade variable such as Moving averages, Moving Standard Deviations, Bolinger Bands. Then we proceed to feature selection can be used with the PAC model or some other. Moreover we scale/normailize each of the features to be included in the ML model. Finally, we build the training, validation and test datasets.
+
+\item \textbf{Pre Modeling}: Use some machine learning algorithms for regression and check how good they perform on the validation dataset. the idea is to have an insight how good different algorithms behaves with the regression task of the model. The algorithms to be used are highlited in section \ref{sol}.
+
+\item \textbf{Training and cross validation}: Train the best ML algorithms chosen from the Pre Modeling Stage and use cross validation to tune each of the models. Select the specific parameters of each of the ML so the model do not overfits or underfits.
+
+\item \textbf{Evaluation}: Compute the evaluation metrics $ R^2 $ and $ R^2_a $  each of the models on the test dataset.
+
+
+\end{enumerate}
+
+
+The researcher may iterate several times on the stages Data Preparation, Pre-modeling and Training and cross validation in order to tune better the final model.
+
+
+
+% Uncomment the following two lines if you want to have a bibliography
+\bibliography{paper}
+\bibliographystyle{apalike}
+
+\end{document}

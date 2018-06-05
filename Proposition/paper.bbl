@@ -1,0 +1,98 @@
+\begin{thebibliography}{}
+
+\bibitem[Abadi et~al., 2015]{tensorflow2015-whitepaper}
+Abadi, M., Agarwal, A., Barham, P., Brevdo, E., Chen, Z., Citro, C., Corrado,
+  G.~S., Davis, A., Dean, J., Devin, M., Ghemawat, S., Goodfellow, I., Harp,
+  A., Irving, G., Isard, M., Jia, Y., Jozefowicz, R., Kaiser, L., Kudlur, M.,
+  Levenberg, J., Man\'{e}, D., Monga, R., Moore, S., Murray, D., Olah, C.,
+  Schuster, M., Shlens, J., Steiner, B., Sutskever, I., Talwar, K., Tucker, P.,
+  Vanhoucke, V., Vasudevan, V., Vi\'{e}gas, F., Vinyals, O., Warden, P.,
+  Wattenberg, M., Wicke, M., Yu, Y., and Zheng, X. (2015).
+\newblock {TensorFlow}: Large-scale machine learning on heterogeneous systems.
+\newblock Software available from tensorflow.org.
+
+\bibitem[Briere and Osterlicnk, 2015]{ARTICLE:5}
+Briere, M. and Osterlicnk, K. (2015).
+\newblock Virtual currency, tangible return: Portfolio diversification with
+  bitcoin.
+\newblock {\em J. Asset MAnag. 47,2348-2358}.
+
+\bibitem[Cheung et~al., 2013]{ARTICLE:4}
+Cheung, A., Roca, E., and Su, J. (2013).
+\newblock Cypto-currency bubbles: An application of the phillips-shi-yu (2013)
+  methodology on mt.gox bitcoin prices. appl. econom.
+\newblock {\em Appl. Econom. 47,2348-2358}.
+
+\bibitem[Dwyer, 2014]{ARTICLE:3}
+Dwyer, G. (2014).
+\newblock The economics of bitcoin and similar private digital currencies.
+\newblock {\em J.Financ.Stab. 17,81-89}.
+
+\bibitem[Fama, 1970]{ARTICLE:6}
+Fama, E.~F. (1970).
+\newblock Efficient capital markets: A review of theory and emprirical work.
+\newblock {\em J. Finance. 25,383-417}.
+
+\bibitem[Georgoula et~al., 2015]{ARTICLE:16}
+Georgoula, I., Pournarakis, D., Sotiropoulos, D.~N., and Giaglis, G.~M. (2015).
+\newblock Using time-series and sentiment analysis to detect the determinants
+  of bitcoin prices.
+
+\bibitem[H-J.Ahn and Cheung, 2005]{ARTICLE:11}
+H-J.Ahn and Cheung, Y. (2005).
+\newblock Price clustering on the limit-order book: Evidence form the stock
+  exchange of hong kong.
+\newblock {\em Finan. Rev 8(4),421-451}.
+
+\bibitem[Indera et~al., 2017]{ARTICLE:17}
+Indera, N.~I., I.~M.~Yassin, A.~Z., and Rizman, Z.~I. (2017).
+\newblock Non-linear autoregressive with exogenous input (narx) bitcoin price
+  prediction model using pso-optimized parameters and moving average technical
+  indicators.
+\newblock {\em J Fundam Appl Sci. 2017, 9(3S), 791-808 792}.
+
+\bibitem[Menkhoff, 2010]{ARTICLE:15}
+Menkhoff, L. (2010).
+\newblock The use of technical analysis by fund managers: International
+  evidence.
+\newblock {\em Journal of Banking and Finance 34 (2010) 2573 2586}.
+
+\bibitem[Nakamoto, 2008]{ARTICLE:1}
+Nakamoto, S. (2008).
+\newblock Bitcoin: A peer-to-peer electronic cash system.
+
+\bibitem[Pang and Song, 2011]{ARTICLE:8}
+Pang, S. and Song, L. (2011).
+\newblock Correlation-aided support vector regression for forex time series.
+\newblock {\em Neuronal Computing and Applications, 20,1193-1203}.
+
+\bibitem[Pedregosa et~al., 2011]{scikit-learn}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J.,
+  Passos, A., Cournapeau, D., Brucher, M., Perrot, M., and Duchesnay, E.
+  (2011).
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830.
+
+\bibitem[Peng and Albuquerque, 2018]{ARTICLE:12}
+Peng, Y. and Albuquerque, P. H.~M. (2018).
+\newblock The best of two worlds: Forecasting high frequency volatility for
+  cryptocurrencies and traditional currencies with support vector regression.
+\newblock {\em Expert Systems With Applications 97 (2018) 177–192}.
+
+\bibitem[Sopranzetti and Datar, 2002]{ARTICLE:10}
+Sopranzetti, B. and Datar, V. (2002).
+\newblock Price clustering in foreign exchange spot markets.
+\newblock {\em J. Financ Mark, 5(4),411-417}.
+
+\bibitem[Urquhart, 2008]{ARTICLE:2}
+Urquhart, A. (2008).
+\newblock The inefficiency of bitcoin.
+\newblock {\em Economics letters 148 2016 (80-82)}.
+
+\bibitem[Vityaev, 2005]{ARTICLE:7}
+Vityaev, B. K.~E. (2005).
+\newblock Data mining and knowledge discovery handbook.
+\newblock {\em Data Mining and Knowledge Discovery Handbook}.
+
+\end{thebibliography}
